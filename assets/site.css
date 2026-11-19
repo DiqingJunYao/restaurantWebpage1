@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: calc(var(--header-height, 5.3rem) + 0.75rem);
+}
+
 body {
   margin: 0;
   background: #181512;
@@ -73,6 +77,9 @@ img {
 }
 
 .site-header {
+  position: sticky;
+  z-index: 1;
+  top: 0;
   background: #13100e;
   color: #f8f0e4;
   border-bottom: 1px solid #49362d;
@@ -349,16 +356,23 @@ img {
   gap: 0.55rem;
   margin-top: 1.65rem;
 }
-.menu-nav a {
+.menu-nav a:not([hidden]) {
+  display: inline-flex;
+}
+
+.menu-nav a, .filter-options button {
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
   padding: 0.42rem 0.8rem;
   border: 1px solid #bd9d8a;
   background: #f8f0e4;
   color: #a12e24;
-  font-size: 0.9rem;
-  font-weight: 700;
+  font: 700 0.9rem/1.4 "DM Sans", Arial, sans-serif;
+  text-align: center;
   text-decoration: none;
 }
-.menu-nav a:hover {
+.menu-nav a:hover, .menu-nav a[aria-pressed=true], .filter-options button:hover, .filter-options button[aria-pressed=true] {
   background: #a12e24;
   color: #fff6ec;
 }
@@ -367,17 +381,29 @@ img {
   padding-block: 2.25rem 4rem;
 }
 
-.menu-key {
+.menu-filters:not([hidden]) {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.45rem 0.7rem;
-  margin-bottom: 2.3rem;
-  color: #645348;
-  font-size: 0.86rem;
+  gap: 0.65rem 1rem;
+  margin-bottom: 1.85rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dac7b5;
 }
-.menu-key .vegetarian {
-  margin-left: 0.5rem;
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.filter-options button {
+  cursor: pointer;
+}
+
+.filter-status {
+  color: #645348;
+  font-size: 0.9rem;
 }
 
 .menu-grid, .details-grid {
@@ -386,9 +412,6 @@ img {
   gap: 3rem clamp(2rem, 6vw, 5.75rem);
 }
 
-.menu-section {
-  scroll-margin-top: 1.5rem;
-}
 .menu-section h2 {
   display: flex;
   justify-content: space-between;
@@ -493,6 +516,7 @@ img {
 }
 .hours div dd {
   color: #645348;
+  font-variant-numeric: tabular-nums;
 }
 
 .light-page main :focus-visible, .favorites :focus-visible, .visit-details :focus-visible {
@@ -523,16 +547,48 @@ img {
     width: calc(100% - 2rem);
   }
   .header-inner {
-    padding-block: 0.85rem 0.2rem;
+    min-height: 4rem;
   }
   .site-nav {
-    gap: 1rem;
+    gap: 0.75rem;
+  }
+  .site-nav a {
+    min-height: 2.75rem;
+    padding-inline: 0.35rem;
   }
   .favorites-grid {
     grid-template-columns: minmax(0, 1fr);
   }
   .hours div {
-    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .menu-nav a {
+    flex: 1 1 calc(50% - 0.55rem);
+  }
+}
+@media (max-width: 28rem) {
+  html {
+    scroll-padding-top: calc(var(--header-height, 6.25rem) + 0.75rem);
+  }
+  .header-inner {
+    justify-content: center;
+    padding-top: 0.5rem;
+  }
+  .brand-mark {
+    height: 2.5rem;
+  }
+  .site-nav {
+    flex: 0 0 100%;
+    gap: 0.35rem;
+  }
+  .site-nav a {
+    flex: 1;
+  }
+  .filter-options {
+    width: 100%;
+  }
+  .filter-options button {
+    flex: 1 1 auto;
   }
 }
 @media (prefers-reduced-motion: reduce) {
