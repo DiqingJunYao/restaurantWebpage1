@@ -338,14 +338,18 @@ img {
   margin-top: 2rem;
 
   article {
+    display: grid;
+    grid-template-columns: clamp(3.5rem, 7vw, 5rem) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(0.65rem, 2vw, 1rem);
     padding-top: 1.05rem;
     border-top: 1px solid $rule-light;
   }
+}
 
-  article > p:last-child {
-    margin-top: 0.55rem;
-    color: $muted-dark;
-  }
+.favorite-details > p:last-child {
+  margin-top: 0.55rem;
+  color: $muted-dark;
 }
 
 .dish-chinese {
@@ -645,6 +649,7 @@ img {
   }
 
   .favorites-grid {
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
   }
 }
@@ -665,10 +670,6 @@ img {
       min-height: 2.75rem;
       padding-inline: 0.35rem;
     }
-  }
-
-  .favorites-grid {
-    grid-template-columns: minmax(0, 1fr);
   }
 
   .hours div {
