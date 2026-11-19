@@ -457,9 +457,24 @@ img {
   padding-block: 1.15rem;
   border-bottom: 1px solid #dac7b5;
 }
+.dish-list li:not([hidden]) {
+  display: grid;
+  grid-template-columns: clamp(3.5rem, 8vw, 5rem) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(0.65rem, 2vw, 1rem);
+}
 .dish-list p {
   margin-top: 0.35rem;
   color: #645348;
+}
+
+.dish-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 0.25rem;
+  background: #000;
+  object-fit: cover;
 }
 
 .dish-heading {
