@@ -1,0 +1,13 @@
+{
+  "name": "red-lantern-restaurant",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "sass --no-source-map scss/site.scss assets/site.css",
+    "watch": "sass --watch --no-source-map scss/site.scss assets/site.css",
+    "build:site": "npm run build && node scripts/prepare-site.mjs"
+  },
+  "devDependencies": {
+    "sass": "^1.97.3"
+  }
+}
