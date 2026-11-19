@@ -14,11 +14,19 @@ body {
   font: 1rem/1.6 "DM Sans", Arial, sans-serif;
 }
 
-h1, h2, h3, p, figure, dl, dd {
+h1,
+h2,
+h3,
+p,
+figure,
+dl,
+dd {
   margin: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 500;
   line-height: 1.12;
@@ -159,11 +167,13 @@ img {
   content: "";
 }
 
-.home-hero, .contact-hero {
+.home-hero,
+.contact-hero {
   background: radial-gradient(ellipse at 79% 42%, #321d16 0%, transparent 67%), #181512;
 }
 
-.hero-layout, .contact-layout {
+.hero-layout,
+.contact-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
   gap: clamp(2rem, 5vw, 5rem);
@@ -176,7 +186,8 @@ img {
   font-weight: 500;
 }
 
-.hero-description, .contact-copy > p:not(.eyebrow) {
+.hero-description,
+.contact-copy > p:not(.eyebrow) {
   max-width: 32ch;
   margin-top: 1.6rem;
   color: #c9baaa;
@@ -254,12 +265,15 @@ img {
   letter-spacing: 0.14em;
 }
 
-.favorites, .light-page, .visit-details {
+.favorites,
+.light-page,
+.visit-details {
   background: #f8f0e4;
   color: #282019;
 }
 
-.favorites, .visit-details {
+.favorites,
+.visit-details {
   padding-block: clamp(3.25rem, 6vw, 5.5rem);
 }
 
@@ -271,7 +285,8 @@ img {
   gap: 1rem;
 }
 
-.favorites .eyebrow, .menu-intro .eyebrow {
+.favorites .eyebrow,
+.menu-intro .eyebrow {
   color: #a12e24;
 }
 
@@ -279,6 +294,7 @@ img {
   color: #a12e24;
   font-weight: 700;
   text-underline-offset: 0.28em;
+  font-size: 1.5rem;
 }
 .text-link:hover {
   color: #282019;
@@ -360,7 +376,8 @@ img {
   display: inline-flex;
 }
 
-.menu-nav a, .filter-options button {
+.menu-nav a,
+.filter-options button {
   align-items: center;
   justify-content: center;
   min-height: 2.75rem;
@@ -372,7 +389,9 @@ img {
   text-align: center;
   text-decoration: none;
 }
-.menu-nav a:hover, .menu-nav a[aria-pressed=true], .filter-options button:hover, .filter-options button[aria-pressed=true] {
+.menu-nav a:hover, .menu-nav a[aria-pressed=true],
+.filter-options button:hover,
+.filter-options button[aria-pressed=true] {
   background: #a12e24;
   color: #fff6ec;
 }
@@ -406,7 +425,8 @@ img {
   font-size: 0.9rem;
 }
 
-.menu-grid, .details-grid {
+.menu-grid,
+.details-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 3rem clamp(2rem, 6vw, 5.75rem);
@@ -519,20 +539,27 @@ img {
   font-variant-numeric: tabular-nums;
 }
 
-.light-page main :focus-visible, .favorites :focus-visible, .visit-details :focus-visible {
+.light-page main :focus-visible,
+.favorites :focus-visible,
+.visit-details :focus-visible {
   outline-color: #a12e24;
 }
 
 @media (max-width: 58rem) {
-  .hero-layout, .contact-layout {
+  .hero-layout,
+  .contact-layout {
     gap: 2rem;
   }
 }
 @media (max-width: 47rem) {
-  .hero-layout, .contact-layout, .menu-grid, .details-grid {
+  .hero-layout,
+  .contact-layout,
+  .menu-grid,
+  .details-grid {
     grid-template-columns: minmax(0, 1fr);
   }
-  .hero-layout, .contact-layout {
+  .hero-layout,
+  .contact-layout {
     max-width: 37rem;
   }
   .hero-image-frame img {
