@@ -139,8 +139,8 @@ img {
 .brand-mark {
   display: grid;
   place-content: center;
-  width: 2.5rem;
-  height: 2.75rem;
+  width: 3.5rem;
+  height: 3.75rem;
   border: 1px solid $red-bright;
   color: $red-bright;
   font-size: 0.98rem;
@@ -766,7 +766,7 @@ html:has(.photo-dialog[open]) {
   }
 
   .brand-mark {
-    height: 2.5rem;
+    height: 3.75rem;
   }
 
   .site-nav {
