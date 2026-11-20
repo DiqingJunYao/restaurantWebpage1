@@ -8,6 +8,7 @@
       content="Red Lantern is a Sichuan restaurant concept built around chili, bold flavor, and dishes made to share."
     />
     <title>Red Lantern | Sichuan Kitchen</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/site.css" />
     <script src="assets/site.js" defer></script>
   </head>
@@ -50,13 +51,20 @@
           </div>
           <figure class="hero-photo">
             <div class="hero-image-frame">
-              <img
-                src="assets/chili-wontons.webp"
-                width="1536"
-                height="1024"
-                alt="Pork wontons in red chili oil with scallions and sesame"
-                fetchpriority="high"
-              />
+              <a
+                class="photo-link"
+                href="assets/chili-wontons.webp"
+                data-photo
+                aria-label="Chili Oil Wontons"
+              >
+                <img
+                  src="assets/chili-wontons.webp"
+                  width="1536"
+                  height="1024"
+                  alt="Pork wontons in red chili oil with scallions and sesame"
+                  fetchpriority="high"
+                />
+              </a>
             </div>
             <figcaption>
               <span>Chili Oil Wontons</span><span lang="zh-CN">红油抄手</span>
@@ -76,15 +84,22 @@
           </div>
           <div class="favorites-grid">
             <article>
-              <img
-                class="dish-photo"
-                src="assets/menu/chili-oil-wontons.webp"
-                alt=""
-                width="256"
-                height="256"
-                loading="lazy"
-                decoding="async"
-              />
+              <a
+                class="photo-link"
+                href="assets/menu/full/chili-oil-wontons.webp"
+                data-photo
+                aria-label="Chili Oil Wontons"
+              >
+                <img
+                  class="dish-photo"
+                  src="assets/menu/chili-oil-wontons.webp"
+                  alt=""
+                  width="256"
+                  height="256"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
               <div class="favorite-details">
                 <p class="dish-chinese" lang="zh-CN">红油抄手</p>
                 <h3>Chili Oil Wontons</h3>
@@ -94,15 +109,22 @@
               </div>
             </article>
             <article>
-              <img
-                class="dish-photo"
-                src="assets/menu/mapo-tofu.webp"
-                alt=""
-                width="256"
-                height="256"
-                loading="lazy"
-                decoding="async"
-              />
+              <a
+                class="photo-link"
+                href="assets/menu/full/mapo-tofu.webp"
+                data-photo
+                aria-label="Mapo Tofu"
+              >
+                <img
+                  class="dish-photo"
+                  src="assets/menu/mapo-tofu.webp"
+                  alt=""
+                  width="256"
+                  height="256"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
               <div class="favorite-details">
                 <p class="dish-chinese" lang="zh-CN">麻婆豆腐</p>
                 <h3>Mapo Tofu</h3>
@@ -113,15 +135,22 @@
               </div>
             </article>
             <article>
-              <img
-                class="dish-photo"
-                src="assets/menu/dan-dan-noodles.webp"
-                alt=""
-                width="256"
-                height="256"
-                loading="lazy"
-                decoding="async"
-              />
+              <a
+                class="photo-link"
+                href="assets/menu/full/dan-dan-noodles.webp"
+                data-photo
+                aria-label="Dan Dan Noodles"
+              >
+                <img
+                  class="dish-photo"
+                  src="assets/menu/dan-dan-noodles.webp"
+                  alt=""
+                  width="256"
+                  height="256"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
               <div class="favorite-details">
                 <p class="dish-chinese" lang="zh-CN">担担面</p>
                 <h3>Dan Dan Noodles</h3>

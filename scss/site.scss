@@ -531,6 +531,76 @@ img {
   object-fit: cover;
 }
 
+.photo-link {
+  display: block;
+
+  &[aria-haspopup="dialog"] {
+    cursor: zoom-in;
+  }
+}
+
+html:has(.photo-dialog[open]) {
+  overflow: hidden;
+}
+
+.photo-dialog {
+  width: min(52rem, calc(100% - 1.5rem));
+  max-height: calc(100% - 1.5rem);
+  padding: 0;
+  border: 1px solid $rule-dark;
+  border-radius: 0.4rem;
+  background: $near-black;
+  color: $paper;
+  overscroll-behavior: contain;
+
+  &::backdrop {
+    background: rgb(0 0 0 / 82%);
+  }
+
+  img {
+    width: auto;
+    height: auto;
+    max-height: calc(100dvh - 5.25rem);
+    margin-inline: auto;
+    object-fit: contain;
+  }
+}
+
+.photo-dialog-content {
+  background: #000;
+}
+
+.photo-dialog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem 0.5rem 1rem;
+  background: $near-black;
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  button {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border: 1px solid $rule-dark;
+    border-radius: 0.25rem;
+    background: $charcoal;
+    color: $paper;
+    font: 1.7rem/1 $sans;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $red-bright;
+    }
+  }
+}
+
 .dish-heading {
   display: flex;
   justify-content: space-between;
@@ -596,6 +666,10 @@ img {
   address {
     color: $muted-dark;
     font-style: normal;
+  }
+
+  .text-link {
+    overflow-wrap: anywhere;
   }
 }
 

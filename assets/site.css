@@ -482,6 +482,70 @@ img {
   object-fit: cover;
 }
 
+.photo-link {
+  display: block;
+}
+.photo-link[aria-haspopup=dialog] {
+  cursor: zoom-in;
+}
+
+html:has(.photo-dialog[open]) {
+  overflow: hidden;
+}
+
+.photo-dialog {
+  width: min(52rem, 100% - 1.5rem);
+  max-height: calc(100% - 1.5rem);
+  padding: 0;
+  border: 1px solid #49362d;
+  border-radius: 0.4rem;
+  background: #13100e;
+  color: #f8f0e4;
+  overscroll-behavior: contain;
+}
+.photo-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.82);
+}
+.photo-dialog img {
+  width: auto;
+  height: auto;
+  max-height: calc(100dvh - 5.25rem);
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.photo-dialog-content {
+  background: #000;
+}
+
+.photo-dialog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem 0.5rem 1rem;
+  background: #13100e;
+}
+.photo-dialog-heading h2 {
+  font-size: 1.3rem;
+}
+.photo-dialog-heading button {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid #49362d;
+  border-radius: 0.25rem;
+  background: #181512;
+  color: #f8f0e4;
+  font: 1.7rem/1 "DM Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+.photo-dialog-heading button:hover {
+  border-color: #ed8b74;
+}
+
 .dish-heading {
   display: flex;
   justify-content: space-between;
@@ -542,6 +606,9 @@ img {
 .details-grid address {
   color: #645348;
   font-style: normal;
+}
+.details-grid .text-link {
+  overflow-wrap: anywhere;
 }
 
 .hours div {

@@ -50,3 +50,42 @@ if (filters) {
   filterMenu(filters.querySelector("[data-filter='all']"));
   filters.hidden = false;
 }
+
+const photoLinks = document.querySelectorAll("[data-photo]");
+if (photoLinks.length && "HTMLDialogElement" in window) {
+  const dialog = document.createElement("dialog");
+  dialog.className = "photo-dialog";
+  dialog.setAttribute("aria-labelledby", "photo-dialog-title");
+  dialog.innerHTML = `
+    <div class="photo-dialog-content">
+      <div class="photo-dialog-heading">
+        <h2 id="photo-dialog-title"></h2>
+        <form method="dialog">
+          <button type="submit" aria-label="Close photo" autofocus>×</button>
+        </form>
+      </div>
+      <img alt="">
+    </div>
+  `;
+  document.body.append(dialog);
+
+  const title = dialog.querySelector("h2");
+  const photo = dialog.querySelector("img");
+
+  for (const link of photoLinks) {
+    link.setAttribute("aria-haspopup", "dialog");
+    link.addEventListener("click", (event) => {
+      if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+
+      event.preventDefault();
+      title.textContent = link.getAttribute("aria-label");
+      photo.alt = link.querySelector("img").alt;
+      photo.src = link.href;
+      dialog.showModal();
+    });
+  }
+
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+}

@@ -8,6 +8,7 @@
       content="Find sample opening hours and contact details for Red Lantern Sichuan Kitchen."
     />
     <title>Visit | Red Lantern Sichuan Kitchen</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/site.css" />
     <script src="assets/site.js" defer></script>
   </head>
@@ -40,14 +41,21 @@
               >See opening hours</a
             >
           </div>
-          <img
-            class="room-photo"
-            src="assets/dining-room.webp"
-            width="1536"
-            height="1024"
-            fetchpriority="high"
-            alt="A warmly lit dining room with red lanterns and dark wood tables"
-          />
+          <a
+            class="photo-link"
+            href="assets/dining-room.webp"
+            data-photo
+            aria-label="Red Lantern dining room"
+          >
+            <img
+              class="room-photo"
+              src="assets/dining-room.webp"
+              width="1536"
+              height="1024"
+              fetchpriority="high"
+              alt="A warmly lit dining room with red lanterns and dark wood tables"
+            />
+          </a>
         </div>
       </section>
 
